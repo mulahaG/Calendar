@@ -47,7 +47,6 @@ const SearchForm = styled.form`
     align-items: center;
     flex-grow: 1;
     gap: 8px;
-
     input {
         height: 30px;
         width: 100%;
@@ -63,7 +62,7 @@ const MenuBox = styled.div`
 
 const HeaderComponent = () => {
     const navigate = useNavigate();
-    
+
     const onLogin = (e) => {
         e.preventDefault();
         navigate('/login');
@@ -74,7 +73,11 @@ const HeaderComponent = () => {
             <NavContainer>
                 <Link to="/">
                     <LogContainer>
-                        <LogBox color="#724ef5">Calendar</LogBox>
+                        <LogBox color="#724ef5">S</LogBox>
+                        <LogBox color="#4ea4f5">S</LogBox>
+                        <LogBox color="#018dff">C</LogBox>
+                        <LogBox color="#ae00ff">.</LogBox>
+                        <LogBox color="#1dfaef">Lab</LogBox>
                     </LogContainer>
                 </Link>
 
