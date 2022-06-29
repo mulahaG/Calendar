@@ -68,50 +68,22 @@ const HeaderComponent = () => {
         navigate('/login');
     }
 
+    const onHome = (e) => {
+        e.preventDefault();
+        navigate('/');
+    }
+
     return (
         <AppHeader>
             <NavContainer>
-                <Link to="/">
-                    <LogContainer>
-                        <LogBox color="#724ef5">S</LogBox>
-                        <LogBox color="#4ea4f5">S</LogBox>
-                        <LogBox color="#018dff">C</LogBox>
-                        <LogBox color="#ae00ff">.</LogBox>
-                        <LogBox color="#1dfaef">Lab</LogBox>
+                    <LogContainer  onClick={onHome}>
+                        <LogBox color="#724ef5">Calendar</LogBox>
                     </LogContainer>
-                </Link>
-
-                <SearchForm>
-                    <input type="search" />
-
-                    <ImageBox>
-                        <Img src="search.png" alt="Search" />
-                        <span>검색</span>
-                    </ImageBox>
-                </SearchForm>
-
-                <MenuBox>
-                    <ImageBox>
-                        <Img src="like.png" alt="like" />
-                        <span>관심등록</span>
-                    </ImageBox>
-
-                    {/* 로그인 */}
-                    <ImageBox onClick={onLogin}>
-                        <Img src="login.png" alt="login" />
-                        <span>로그인</span>
-                    </ImageBox>  
-
-                    <ImageBox>
-                        <Img src="cart.png" alt="cart" />
-                        <span>장바구니</span>
-                    </ImageBox>
-
-                    <ImageBox>
-                        <Img src="customer.png" alt="customer" />
-                        <span>고객센터</span>
-                    </ImageBox>
-                </MenuBox>
+                
+                {/* 로그인 */}
+                <LogContainer onClick={onLogin}>
+                    <LogBox color="#1dfaef">Log In</LogBox>
+                </LogContainer>
             </NavContainer>
         </AppHeader>
     )
