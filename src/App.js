@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HeaderComponent from './components/common/HeaderComponent';
+import OAuth2RedirectHandler from './components/common/HeaderComponent';
 import Home from './components/home';
 import Login from './components/login';
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login/>} />
+        <Route path="/oauth/callback/kakao" component={OAuth2RedirectHandler}/>
       </Routes>
     </BrowserRouter>
   </>

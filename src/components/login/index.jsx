@@ -20,6 +20,7 @@ const Login = () => {
                                     <img src="kakao_long.png" alt="카카오톡"/>
                                 </span>
                             </a><br/>
+                            <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
                         </button>
                     </ul>
                 </div>
