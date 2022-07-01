@@ -5,22 +5,13 @@ const Login = () => {
         <form className='sns-in'>
             <div class="sns_login_wrap"><div class="tit" className="tit">Log In</div>
                 <div class="sns_list">
-                    <ul>
-                        <button className="Naver_Button">
-                            <a href="javascript:void(0);">
-                                <span class="logo">
-                                    <img src="naver_long.png" alt="네이버"/>
-                                </span>
-                            </a><br/>
-                        </button>
-                        
+                    <ul>                        
                         <button className="Kakao_Button">
                             <a href="javascript:void(0);">
                                 <span class="logo">
                                     <img src="kakao_long.png" alt="카카오톡"/>
                                 </span>
                             </a><br/>
-                            <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
                         </button>
                     </ul>
                 </div>

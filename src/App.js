@@ -16,7 +16,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login/>} />
-        <Route path="/oauth/callback/kakao" component={OAuth2RedirectHandler}/>
       </Routes>
     </BrowserRouter>
   </>
