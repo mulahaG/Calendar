@@ -1,17 +1,15 @@
 import './Login.css';
 import { useNavigate } from "react-router-dom";
-
-
   
 const Login = () => {
     const REST_API_KEY = "efa63d774bf94d489920b4d4633f11ee";
-    const REDIRECT_URI = "http://localhost:3000";
+    const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
     const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+    
     const navigate = useNavigate();
     const onKakao = (e) => {
         e.preventDefault();
         navigate(location.replace(KAKAO_AUTH_URL));
-       
     }    
 
     return (

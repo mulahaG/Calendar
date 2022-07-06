@@ -15,7 +15,6 @@ function Home() {
   const [value, onChange] = useState(new Date());
   return (
     <>
-
       <HomeContainer/>
       <DesignCalendar>
         <Calendar onChange={onChange}value={value}/>

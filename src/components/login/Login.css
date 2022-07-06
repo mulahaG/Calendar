@@ -10,13 +10,7 @@
     font-size: 50px;
     line-height: 100px;
     text-align: center;
-}
-
-.Naver_Button{
-    background-color:transparent;
-    border: 0;
-    margin: auto;
-    display:block;
+    color: #1dfaef;
 }
 
 .Kakao_Button{
