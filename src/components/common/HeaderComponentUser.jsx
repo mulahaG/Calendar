@@ -9,7 +9,7 @@ const AppHeader = styled.div`
 
 const NavContainer = styled.div`
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,62 +26,28 @@ const LogBox = styled.div`
     color: ${(props) => props.color || "black"};
 `;
 
-const ImageBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    &:hover {
-        cursor: pointer;
-    }
-`;
-
-const Img = styled.img`
-    background-color: white;
-    width: 50px;
-`;
-
-const SearchForm = styled.form`
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    gap: 8px;
-    input {
-        height: 30px;
-        width: 100%;
-        margin: 0 16px;
-        padding: 2px 4px;
-    }
-`;
-
-const MenuBox = styled.div`
-    display: flex;
-    gap: 8px;
-`
-
 const HeaderComponent = () => {
     const navigate = useNavigate();
 
-    const onLogin = (e) => {
-        e.preventDefault();
-        navigate('/login');
-    }
-
-    const onHome = (e) => {
+    const onLogOut = (e) => {
         e.preventDefault();
         navigate('/');
+    }
+
+    const onUser = (e) => {
+        e.preventDefault();
+        navigate('/user');
     }
 
     return (
         <AppHeader>
             <NavContainer>
-                    <LogContainer  onClick={onHome}>
+                    <LogContainer  onClick={onUser}>
                         <LogBox color="#724ef5">Calendar</LogBox>
                     </LogContainer>
                 
                 {/* 로그인 */}
-                <LogContainer onClick={onLogin}>
+                <LogContainer onClick={onLogOut}>
                     <LogBox color="#fa1d1d">Log Out</LogBox>
                 </LogContainer>
             </NavContainer>

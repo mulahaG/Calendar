@@ -1,4 +1,3 @@
-import "../../App.css";
 import styled from "styled-components";
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
@@ -7,7 +6,7 @@ import 'react-calendar/dist/Calendar.css'; // css import
 const HomeContainer = styled.div`
   padding-top: 103px;
 `
-const DesignCalendar =styled.div`
+const Center =styled.div`
 padding-top: 10%;
 padding-left: 40%;
 `
@@ -16,9 +15,9 @@ function Home() {
   return (
     <>
       <HomeContainer/>
-      <DesignCalendar>
+      <Center>
         <Calendar onChange={onChange}value={value}/>
-      </DesignCalendar>
+      </Center>
     </>
   );
 }

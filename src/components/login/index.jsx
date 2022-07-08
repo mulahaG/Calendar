@@ -1,6 +1,23 @@
-import './Login.css';
 import { useNavigate } from "react-router-dom";
-  
+import styled from "styled-components";
+
+const Kakao_Button =styled.div`
+    background-color:transparent;
+    border: 0;
+    margin: auto;
+    display:block;
+`
+const Tit =styled.div`
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
+    color: #1dfaef;
+`
+const In =styled.div`
+    padding-top: 103px;
+    text-align: center;
+`
+
 const Login = () => {
     const REST_API_KEY = "efa63d774bf94d489920b4d4633f11ee";
     const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
@@ -13,21 +30,14 @@ const Login = () => {
     }    
 
     return (
-        
-        <form className='sns-in'>
-            <div class="sns_login_wrap"><div class="tit" className="tit">Log In</div>
-                <div class="sns_list">
-                    <ul>                    
-                        <button className="Kakao_Button" onClick={onKakao} >
-                            <span class="logo" >
-                                <img src="kakao_long.png" alt="카카오톡"/>
-                            </span>
-                            <br/>
-                        </button>
-                    </ul>
-                </div>
-            </div>
-        </form>
+        <In>
+            <Tit>Log In</Tit>           
+            <Kakao_Button onClick={onKakao} >
+                <span class="logo" >
+                    <img src="kakao_long.png" alt="카카오톡"/>
+                </span><br/>
+            </Kakao_Button>
+        </In>
     )
 }
 

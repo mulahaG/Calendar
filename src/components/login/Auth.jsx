@@ -32,7 +32,7 @@ const Auth = () => {
       window.Kakao.init(REST_API_KEY);
       // access token 설정
       window.Kakao.Auth.setAccessToken(res.data.access_token);
-      navigate("/profile");
+      navigate("/user");
     } catch (err) {
       console.log(err);
     }
@@ -42,7 +42,9 @@ const Auth = () => {
     getToken();
   }, []);
 
-  return null;
+  return (
+    navigate("/user")
+  );
 };
 
 export default Auth;

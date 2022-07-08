@@ -1,5 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import styled from "styled-components";
+import { useEffect } from "react";
+import axios from "axios";
+import qs from "qs";
+import { useHistory } from "react-router-dom";
 
 const AppHeader = styled.div`
     background-color: #403D3D;
@@ -9,7 +13,7 @@ const AppHeader = styled.div`
 
 const NavContainer = styled.div`
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,47 +30,34 @@ const LogBox = styled.div`
     color: ${(props) => props.color || "black"};
 `;
 
-const ImageBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    &:hover {
-        cursor: pointer;
-    }
-`;
-
-const Img = styled.img`
-    background-color: white;
-    width: 50px;
-`;
-
-const SearchForm = styled.form`
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    gap: 8px;
-    input {
-        height: 30px;
-        width: 100%;
-        margin: 0 16px;
-        padding: 2px 4px;
-    }
-`;
-
-const MenuBox = styled.div`
-    display: flex;
-    gap: 8px;
-`
-
 const HeaderComponent = () => {
     const navigate = useNavigate();
+    const [user_id, setUserId] = useState();
+    const [nickName, setNickName] = useState();
+    const [profileImage, setProfileImage] = useState();
+    const getProfile = async () => {
+        try {
+            // Kakao SDK API를 이용해 사용자 정보 획득
+            let data = await window.Kakao.API.request({
+                url: "/v2/user/me",
+            });
+        // 사용자 정보 변수에 저장
+        setUserId(data.id);
+        setNickName(data.properties.nickname);
+        setProfileImage(data.properties.profile_image);
+    } 
+        catch (err) {
+            console.log(err);
+        }
+    };
+        useEffect(() => {
+            getProfile();
+        }, []);
 
-    const onLogin = (e) => {
-        e.preventDefault();
-        navigate('/login');
-    }
+        const onLogin = (e) => {
+            e.preventDefault();
+            navigate('/login');
+        }
 
     const onHome = (e) => {
         e.preventDefault();

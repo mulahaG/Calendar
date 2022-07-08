@@ -1,11 +1,10 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
 import HeaderComponent from './components/common/HeaderComponent';
 import HeaderComponentUser from './components/common/HeaderComponentUser';
 import Home from './components/home';
 import Login from './components/login';
-import Profile from "./components/login/Profile";
+import User from "./components/User";
 import Auth from "./components/login/Auth";
   // const log =(( )=>{
   //   if(URL=="http://localhost:3000"){
@@ -21,11 +20,12 @@ function App() {
     <BrowserRouter>
       {/* <log/> */}
       <HeaderComponent/>
+      <HeaderComponentUser/>
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/oauth/kakao/callback" element={<Auth/>} />
-        <Route path="/profile" element={<Profile/>} />
+        <Route path="/user" element={<User/>} /> 
       </Routes>
     </BrowserRouter>
 
