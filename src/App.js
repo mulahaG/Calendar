@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import HeaderComponent from './components/common/HeaderComponent';
 import HeaderComponentUser from './components/common/HeaderComponentUser';
 import Home from './components/home';
@@ -20,7 +20,7 @@ function App() {
     <BrowserRouter>
       {/* <log/> */}
       <HeaderComponent/>
-      <HeaderComponentUser/>
+      {/**/}<HeaderComponentUser/>
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login/>} />

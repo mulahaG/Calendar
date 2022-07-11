@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+
+  {/*import { useEffect } from "react";
 import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
@@ -7,8 +8,7 @@ const Auth = () => {
   const REST_API_KEY = "efa63d774bf94d489920b4d4633f11ee";
   const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
   const CLIENT_SECRET = "aw4xOd79BOGywPbOe4RQbw7Cl2VZUG4N";
-
-  // calllback으로 받은 인가코드
+ calllback으로 받은 인가코드
   const code = new URL(window.location.href).searchParams.get("code");
   const navigate = useNavigate();
 
@@ -42,9 +42,7 @@ const Auth = () => {
     getToken();
   }, []);
 
-  return (
-    navigate("/user")
-  );
+  return (null);
 };
 
-export default Auth;
+export default Auth;*/}

@@ -26,7 +26,7 @@ const LogBox = styled.div`
     color: ${(props) => props.color || "black"};
 `;
 
-const HeaderComponent = () => {
+const HeaderComponentUser = () => {
     const navigate = useNavigate();
 
     const onLogOut = (e) => {
@@ -55,4 +55,4 @@ const HeaderComponent = () => {
     )
 }
 
-export default HeaderComponent;
+export default HeaderComponentUser;
