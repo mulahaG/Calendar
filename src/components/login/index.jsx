@@ -26,7 +26,7 @@ const Login = () => {
     const navigate = useNavigate();
     const onKakao = (e) => {
         e.preventDefault();
-        navigate(location.replace(KAKAO_AUTH_URL));
+        navigate((KAKAO_AUTH_URL));
     }    
 
     return (

@@ -5,7 +5,7 @@ import HeaderComponentUser from './components/common/HeaderComponentUser';
 import Home from './components/home';
 import Login from './components/login';
 import User from "./components/User";
-import Auth from "./components/login/Auth";
+
   // const log =(( )=>{
   //   if(URL=="http://localhost:3000"){
   //     <HeaderComponent/>
@@ -24,7 +24,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login/>} />
-        <Route path="/oauth/kakao/callback" element={<Auth/>} />
         <Route path="/user" element={<User/>} /> 
       </Routes>
     </BrowserRouter>
