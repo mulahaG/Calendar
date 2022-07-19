@@ -5,7 +5,7 @@ import HeaderComponentUser from './components/common/HeaderComponentUser';
 import Home from './components/home';
 import Login from './components/login';
 import User from "./components/User";
-
+import Info from "./components/User/Info";
   // const log =(( )=>{
   //   if(URL=="http://localhost:3000"){
   //     <HeaderComponent/>
@@ -20,11 +20,12 @@ function App() {
     <BrowserRouter>
       {/* <log/> */}
       <HeaderComponent/>
-      {/**/}<HeaderComponentUser/>
+      {/*<HeaderComponentUser/>*/}
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/user" element={<User/>} /> 
+        <Route path="/info" element={<Info/>} /> 
       </Routes>
     </BrowserRouter>
 

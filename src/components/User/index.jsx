@@ -68,18 +68,19 @@ const Erollment = styled.div`
 `
 
 
-const User = () => {
-  const [value, onChange] = useState(new Date());
+const User = () => {  
+  const [value, onChange] = useState(new Date());  
   const navigate = useNavigate();
-  const onEnrollment = (e) => {
+
+  const onEnrolment = (e) => {
     e.preventDefault();
-    navigate('/');
+    navigate('/CalendarEnrolment');
   }  
+
   const onDelete = (e) => {
     e.preventDefault();
     navigate('/');
   }
-
 
   return (
     <>
@@ -88,14 +89,14 @@ const User = () => {
         <CalendarList>
             <List_text>일정목록</List_text> 
             <CalendarButton>
-              <Erollment onClick={onEnrollment}>일정등록</Erollment>  
+              <Erollment onClick={onEnrolment}>일정등록</Erollment>  
               <Delete onClick={onDelete}>일정삭제</Delete>
             </CalendarButton>
         </CalendarList>
         <FreindList>
-          <List_text> 친구목록 </List_text>
+          <List_text>친구목록</List_text>
           <CalendarButton>
-            <Erollment onClick={onEnrollment}>일정등록</Erollment>  
+            <Erollment onClick={onEnrolment}>일정등록</Erollment>  
             <Delete onClick={onDelete}>일정삭제</Delete>
           </CalendarButton>
         </FreindList>   

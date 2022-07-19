@@ -39,13 +39,19 @@ const HeaderComponent = () => {
         navigate('/');
     }
 
+    const onInfo = (e) => {
+        e.preventDefault();
+        navigate('/info');
+    }
     return (
         <AppHeader>
             <NavContainer>
                     <LogContainer  onClick={onHome}>
                         <LogBox color="#724ef5">Calendar</LogBox>
                     </LogContainer>
-                
+                    <LogContainer onClick={onInfo}>
+                    <LogBox color="#ffffff">My Info</LogBox>
+                </LogContainer>
                 {/* 로그인 */}
                 <LogContainer onClick={onLogin}>
                     <LogBox color="#1dfaef">Log In</LogBox>
