@@ -6,6 +6,8 @@ import Home from './components/home';
 import Login from './components/login';
 import User from "./components/User";
 import Info from "./components/User/Info";
+import CalendarEnrolment from "./components/User/CalendarEnrolment";
+import CalendarDelete from "./components/User/CalendarDelete";
   // const log =(( )=>{
   //   if(URL=="http://localhost:3000"){
   //     <HeaderComponent/>
@@ -25,7 +27,10 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/user" element={<User/>} /> 
-        <Route path="/info" element={<Info/>} /> 
+        <Route path="/info" element={<Info/>} />
+        <Route path="calendarEnrolment" element={<CalendarEnrolment/>} />
+        <Route path="calendarDelete" element={<CalendarDelete/>} />
+        
       </Routes>
     </BrowserRouter>
 

@@ -33,15 +33,10 @@ const Info = () => {
       getProfile();
     }, []);
 
-    const onKakao = (e) => {
-      e.preventDefault();
-      alert(nickName);
-    }
+
       return (
         <>      
             <HomeContainer/>
-            <button onClick={onKakao}>버튼</button>
-            {profileImage}
         </>  
         
       )
