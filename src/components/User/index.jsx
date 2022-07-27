@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // css import
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const HomeContainer = styled.div`
@@ -123,6 +123,7 @@ const User = () => {
 
   const [value, onChange] = useState(new Date());  
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const onEnrolment = (e) => {
     e.preventDefault();
@@ -144,6 +145,8 @@ const User = () => {
       <HomeContainer/>
         <CalendarList>
             <List_text>일정목록</List_text> 
+            {/* 일정명 */}
+            
             <List_Button>
               <Button onClick={onEnrolment}>등록</Button>  
               <Button onClick={onDelete}>삭제</Button>

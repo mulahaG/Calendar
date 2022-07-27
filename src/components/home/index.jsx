@@ -7,8 +7,8 @@ const HomeContainer = styled.div`
   padding-top: 103px;
 `
 const Center =styled.div`
-padding-top: 10%;
-padding-left: 40%;
+  padding-top: 10%;
+  padding-left: 40%;
 `
 function Home() {
   const [value, onChange] = useState(new Date());

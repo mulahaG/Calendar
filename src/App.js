@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
+import qs from "qs";
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import HeaderComponent from './components/common/HeaderComponent';
 import HeaderComponentUser from './components/common/HeaderComponentUser';
@@ -8,7 +10,8 @@ import User from "./components/User";
 import Info from "./components/User/Info";
 import CalendarEnrolment from "./components/User/CalendarEnrolment";
 import CalendarDelete from "./components/User/CalendarDelete";
-  // const log =(( )=>{
+
+  //const log =(( )=>{
   //   if(URL=="http://localhost:3000"){
   //     <HeaderComponent/>
   //   }
@@ -16,7 +19,10 @@ import CalendarDelete from "./components/User/CalendarDelete";
   //     <HeaderComponentUser/>
   //   }
   // });
+
+  
 function App() {
+
   return (
     <>
     <BrowserRouter>

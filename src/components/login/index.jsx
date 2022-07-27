@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Kakao_Button =styled.div`
-    background-color:transparent;
     border: 0;
     margin: auto;
     display:block;
@@ -16,6 +15,7 @@ const In =styled.div`
     padding-top: 103px;
     text-align: center;
 `
+
 
 const Login = () => {
     const REST_API_KEY = "efa63d774bf94d489920b4d4633f11ee";
