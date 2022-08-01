@@ -11,7 +11,7 @@ import Info from "./components/User/Info";
 import CalendarEnrolment from "./components/User/CalendarEnrolment";
 import CalendarDelete from "./components/User/CalendarDelete";
 
-  //const log =(( )=>{
+  // const log =(( )=>{
   //   if(URL=="http://localhost:3000"){
   //     <HeaderComponent/>
   //   }
@@ -27,8 +27,8 @@ function App() {
     <>
     <BrowserRouter>
       {/* <log/> */}
-      <HeaderComponent/>
-      {/*<HeaderComponentUser/>*/}
+      {/* <HeaderComponent/>*/}
+      <HeaderComponentUser/> 
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login/>} />

@@ -1,13 +1,19 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
+const HomeContainer = styled.div`
+  padding-top: 103px;
+`
 const In =styled.div`
-    padding-top: 103px;
+    width : 700px;
+    height: 500px;
+    position:relative;
     border: 1px solid #00aeff;
-    position: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX( -50% );
 `
 const Tit =styled.div`
-    padding-top: 103px;
     font-size: 50px;
     line-height: 100px;
     text-align: center;
@@ -23,13 +29,13 @@ const Bady = styled.div`
     justify-content: center;
 `
 const Text = styled.div`
-margin-top: 10px;
+    margin-top: 20px;
 `
 
 const CalendarEnrolment = () => {
-    const [datetitle, setDateTitle] = useState('');
+    const [dateTitle, setDateTitle] = useState('');
     const [email, setEmail] = useState('');
-    const [datecolor, setDateColor] = useState('');
+    const [dateColor, setDateColor] = useState('');
     const [dateStart, setDateStart] = useState('');
     const [dateEnd, setDateEnd] = useState('');
     const [selected,setSelected] = useState('');
@@ -41,14 +47,14 @@ const CalendarEnrolment = () => {
         const REDIRECT_URI = "http://localhost:3000/user";
         const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
         e.preventDefault();
-        //alert("일정명 : " + datetitle + "\n이메일 : " + email + "\n일정기간 : "+ dateStart + "~" + dateEnd + "\n반복 : " + selected + "\n색상 : " + datecolor + "\n친구 : " + freind);
         window.location.replace(KAKAO_AUTH_URL);
+        // alert("일정명 : " + dateTitle + "\n이메일 : " + email + "\n일정기간 : "+ dateStart + "~" + dateEnd + "\n반복 : " + selected + "\n색상 : " + dateColor + "\n친구 : " + freind);
     }
 
     return (
         <>
-              
-
+        <HomeContainer/>
+        <In>
             <Tit>일정 등록</Tit>
             <form  onSubmit={onDelete}>
                 <Bady>
@@ -61,7 +67,7 @@ const CalendarEnrolment = () => {
                         <Text>● 친구 </Text>
                     </Schedule_List>
                     <Schedule_List>
-                        <Text>: <input type="text" value={datetitle} name="title" onChange={event => setDateTitle(event.target.value)} required/></Text>
+                        <Text>: <input type="text" value={dateTitle} name="title" onChange={event => setDateTitle(event.target.value)} required/></Text>
                         <Text>: <input type="email" value={email} name="email" id="email" onChange={event => setEmail(event.target.value)} required/></Text>
                         <Text>
                             : <input type="datetime-local" value={dateStart} name="dateStart" onChange={event => setDateStart(event.target.value)} required/>
@@ -76,17 +82,18 @@ const CalendarEnrolment = () => {
                                 <option>매년</option>
                             </select>
                         </Text>
-                        <Text>: <input type="color" value={datecolor} onChange={event => setDateColor(event.target.value)} /></Text>
+                        <Text>: <input type="color" value={dateColor} onChange={event => setDateColor(event.target.value)} /></Text>
                         <Text>
                             : <select v-model="selected"  value={freind} onChange={event => setFreind(event.target.value)}>
                                 <option>freind</option>
                                 <option>freind</option>
                             </select>
-                        </Text>
+                        </Text><br/>
                     </Schedule_List>
                 </Bady>
                 <Bady><button type="submit">등록</button></Bady>
             </form>
+            </In>
         </>
     );
 }
